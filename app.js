@@ -2,7 +2,7 @@ class FormSubmit {
     constructor(settings) {
         this.settings = settings
         this.form = document.querySelector(settings.form);
-        this.form = document.querySelector(settings.button);
+        this.formButton = document.querySelector(settings.button);
 
         if (this.form) {
             this.url = this.form.getAttribute("action");
@@ -28,7 +28,7 @@ class FormSubmit {
     }
 
     onSubmission(event) {
-        event.preventDeFault();
+        event.preventDefault();
         event.target.disabled = true
         event.target.innerText = "Enviando...";
     }
