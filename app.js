@@ -29,7 +29,7 @@ class FormSubmit {
 
     onSubmission(event) {
         event.preventDefault();
-        event.target.disabled = true
+        event.target.disabled = true;
         event.target.innerText = "Enviando...";
     }
 
@@ -42,9 +42,9 @@ class FormSubmit {
                     "Content-Type": "application/json", 
                     Accept: "application/json",
                 },
-            body: JSON.stringify(this.getFormObject()),
-        });
-        this.displySuccess();  
+                body: JSON.stringify(this.getFormObject()),
+            });
+            this.displySuccess();  
         } catch (error){
             this.displyError();
             throw new Error(error);
